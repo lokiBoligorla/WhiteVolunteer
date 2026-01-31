@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | White Volunteers Foundation</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero / Page Header */
+        .page-header {
+            background: linear-gradient(135deg, rgba(27, 78, 120, 0.9), rgba(10, 42, 67, 0.95)), url('assets/images/hero_banner.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 6rem 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            font-weight: 800;
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Layout */
+        .donation-container {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .donation-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* Bank Details Card */
+        .bank-details-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bank-details-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, var(--secondary-green), var(--primary-blue));
+        }
+
+        .bank-details-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #666;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-value {
+            color: var(--dark-navy);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: right;
+        }
+
+        /* Tax Benefit Box */
+        .tax-benefit {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            border: 1px solid rgba(76, 175, 80, 0.2);
+        }
+
+        .tax-benefit i {
+            font-size: 2.5rem;
+            color: var(--secondary-green);
+            background: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Cause Selector */
+        .cause-selector {
+            margin-top: 4rem;
+        }
+
+        .cause-selector h3 {
+            color: var(--dark-navy);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .cause-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cause-card {
+            background: white;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            cursor: pointer;
+        }
+
+        .cause-card:hover {
+            border-color: var(--secondary-green);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .cause-card i {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .cause-card:hover i {
+            color: var(--secondary-green);
+            transform: scale(1.1);
+        }
+
+        .cause-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .cause-card p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: #777;
+        }
+
+        /* UPI Section */
+        .donation-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .upi-section {
+            text-align: center;
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .upi-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f0f0f0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #555;
+            letter-spacing: 1px;
+        }
+
+        .qr-placeholder {
+            width: 220px;
+            height: 220px;
+            background: white;
+            margin: 1.5rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            border: 2px dashed var(--secondary-green);
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .qr-placeholder::after {
+            content: 'Scan QR Code';
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            width: 100%;
+            color: #888;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .upi-id-box {
+            background: #f4f6f8;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-top: 2.5rem;
+            border: 1px solid #e0e0e0;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .phone-number {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            font-size: 1.1rem;
+        }
+
+        .phone-number i {
+            color: var(--secondary-green);
+        }
+
+        @media (max-width: 900px) {
+            .donation-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .donation-sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.jpg" alt="White Volunteers Foundation">
+            </a>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#programs">Programs</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cta-buttons-mobile">
+                    <a href="donate.html" class="btn btn-green">Donate Us</a>
+                    <a href="join.html" class="btn btn-blue">Join With Us</a>
+                </li>
+            </ul>
+            <div class="cta-buttons">
+                <a href="donate.html" class="btn btn-green">Donate Us</a>
+                <a href="join.html" class="btn btn-blue">Join With Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Donate Now</h1>
+            <p>Your Support Can Transform Lives & Communities</p>
+        </div>
+    </section>
+
+    <!-- Donation Content -->
+    <section class="donation-container container">
+        <div class="donation-grid">
+
+            <!-- Left Column: Bank Details & Info -->
+            <div class="donation-info">
+                <div class="bank-details-card">
+                    <h3><i class="fa-solid fa-building-columns"></i> Bank Transfer Details</h3>
+                    <p>You can directly transfer your donation to our bank account. All donations are eligible for tax
+                        exemption.</p>
+
+                    <div style="margin-top: 2rem;">
+                        <div class="detail-row">
+                            <div class="detail-label">Account Name</div>
+                            <div class="detail-value">White Volunteers Foundation</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">Account Number</div>
+                            <div class="detail-value">50200061853720</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">Bank Name</div>
+                            <div class="detail-value">HDFC Bank</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="tax-benefit">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: var(--dark-navy);">Tax Exemption</h4>
+                        <p style="margin-bottom: 0;">Donations to White Volunteers Foundation are significantly
+                            tax-exempt under Section 80G of the Income Tax Act.</p>
+                    </div>
+                </div>
+
+                <div class="cause-selector">
+                    <h3>Choose a Cause to Support</h3>
+                    <div class="cause-grid">
+                        <div class="cause-card">
+                            <i class="fa-solid fa-shirt"></i>
+                            <h4>VastraDaan</h4>
+                            <p>Donate Clothes</p>
+                        </div>
+                        <div class="cause-card">
+                            <i class="fa-solid fa-bowl-food"></i>
+                            <h4>Daily Breakfast</h4>
+                            <p>Feed a Child</p>
+                        </div>
+                        <div class="cause-card">
+                            <i class="fa-solid fa-book-open"></i>
+                            <h4>Skill Development</h4>
+                            <p>Empower Youth</p>
+                        </div>
+                        <div class="cause-card">
+                            <i class="fa-solid fa-school"></i>
+                            <h4>School Renovation</h4>
+                            <p>Build Future</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: UPI & Contact -->
+            <div class="donation-sidebar">
+                <div class="upi-section">
+                    <h3 style="color: var(--primary-blue);">Scan to Donate</h3>
+                    <p>Use any UPI App (GPay, PhonePe, Paytm)</p>
+                    <div class="qr-container" style="text-align: center; margin: 1.5rem 0; cursor: pointer;"
+                        onclick="openLightbox()">
+                        <img src="assets/images/qr_code.jpg" alt="Donate via UPI"
+                            style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                        <div style="font-size: 0.8rem; color: #888; margin-top: 5px;"><i
+                                class="fa-solid fa-magnifying-glass-plus"></i> Click to Enlarge</div>
+                    </div>
+                    <p style="font-family: monospace; background: #eee; padding: 5px; border-radius: 4px;">
+                        whitevolunteers@upi</p>
+                    <p style="margin-top: 10px; font-weight: bold; color: var(--dark-navy);">
+                        GPAY/PHONEPE: 8400996611
+                    </p>
+                </div>
+
+                <div
+                    style="margin-top: 2rem; background: var(--dark-navy); color: white; padding: 2rem; border-radius: 10px; text-align: center;">
+                    <h3 style="color: white;">Need Help?</h3>
+                    <p style="color: #ddd;">If you have any questions regarding your donation, please contact us.</p>
+                    <a href="contact.html" class="btn btn-green" style="margin-top: 1rem;">Contact Us</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>White Volunteers Foundation is dedicated to building a better future through education, health, and
+                    community empowerment.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="team.html">About Team</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fa-solid fa-phone"></i> +91 8400996611</li>
+                    <li><i class="fa-solid fa-envelope"></i> urbandonors@gmail.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> 10-551, Nagaram, Keesara, Greater Hyderabad 500083</li>
+                </ul>
+                <div class="social-icons" style="margin-top: 1rem;">
+                    <a href="https://www.facebook.com/www.wvfindia.org?mibextid=rS40aB7S9Ucbxw6v"><i
+                            class="fa-brands fa-facebook" style="color: white; font-size: 1.5rem;"></i></a>
+                    <a href="https://www.instagram.com/w_v_foundations/?igsh=dzk3bXc5MTFjZmJt#"><i
+                            class="fa-brands fa-instagram" style="color: white; font-size: 1.5rem;"></i></a>
+                    <a href="https://www.linkedin.com/in/latha-maraveni-44308a165"><i class="fa-brands fa-linkedin"
+                            style="color: white; font-size: 1.5rem;"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 White Volunteers Foundation. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="qr-lightbox"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; align-items: center; justify-content: center;">
+        <div style="position: relative; max-width: 90%; max-height: 90%;">
+            <span onclick="closeLightbox()"
+                style="position: absolute; top: -40px; right: 0; color: white; font-size: 2rem; cursor: pointer;">&times;</span>
+            <img src="assets/images/qr_code.jpg" alt="Donate QR"
+                style="max-width: 100%; max-height: 80vh; border-radius: 10px;">
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        function openLightbox() {
+            document.getElementById('qr-lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('qr-lightbox').style.display = 'none';
+        }
+
+        // Close on background click
+        document.getElementById('qr-lightbox').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+
+</html>

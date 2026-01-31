@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join With Us - White Volunteers Foundation</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-navy);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-green);
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+        }
+
+        .join-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.jpg" alt="White Volunteers Foundation">
+            </a>
+            <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#programs">Programs</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cta-buttons-mobile">
+                    <a href="donate.html" class="btn btn-green">Donate Us</a>
+                    <a href="join.html" class="btn btn-blue">Join With Us</a>
+                </li>
+            </ul>
+            <div class="cta-buttons">
+                <a href="donate.html" class="btn btn-green">Donate Us</a>
+                <a href="join.html" class="btn btn-blue">Join With Us</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="join-container">
+            <h1 style="text-align: center; color: var(--primary-blue); margin-bottom: 1rem;">Become a Volunteer</h1>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">Join our community of changemakers. Fill
+                out the form below to get started.</p>
+
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="a57c8fd7-8d73-46a2-baac-8f65f722eded">
+                <input type="hidden" name="subject" value="New Volunteer Application - White Volunteers Foundation">
+                <input type="hidden" name="from_name" value="White Volunteers Website">
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" name="first_name" class="form-control" placeholder="Enter first name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" name="last_name" class="form-control" placeholder="Enter last name" required>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" name="email" class="form-control" placeholder="example@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" name="phone" class="form-control" placeholder="+91 8400996611" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Address</label>
+                    <input type="text" name="address" class="form-control" placeholder="Street address, City, State"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Education / Profession</label>
+                    <input type="text" name="education" class="form-control"
+                        placeholder="e.g. Student, Software Engineer, Teacher">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">How would you like to contribute?</label>
+                    <select name="contribution_role" class="form-control">
+                        <option value="">Select an option</option>
+                        <option value="Teaching / Education">Teaching / Education</option>
+                        <option value="Event Management">Event Management</option>
+                        <option value="Social Media / Marketing">Social Media / Marketing</option>
+                        <option value="Fundraising">Fundraising</option>
+                        <option value="General Volunteering">General Volunteering</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Why do you want to join us?</label>
+                    <textarea name="message" class="form-control" rows="4"
+                        placeholder="Tell us briefly about your motivation..."></textarea>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button type="submit" class="btn btn-blue"
+                        style="padding: 12px 40px; font-size: 1.1rem; border: none;">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p>urbandonors@gmail.com</p>
+            </div>
+        </div>
+        <div class="copyright"> &copy; 2025 White Volunteers Foundation. </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
