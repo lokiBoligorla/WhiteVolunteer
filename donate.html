@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - White Volunteer's Foundation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .donation-options {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .donation-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            background: transparent;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .donation-btn.active,
+        .donation-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .qr-code {
+            max-width: 200px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Payment Card Styles */
+        .payment-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .payment-header h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .payment-header p {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .qr-code-wrapper {
+            position: relative;
+            display: inline-block;
+            padding: 15px;
+            background: #fdfdfd;
+            border-radius: 15px;
+            border: 2px dashed var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .main-qr {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .qr-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--white);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            border: 2px solid var(--primary-color);
+        }
+
+        .phone-payment {
+            margin-top: 20px;
+        }
+
+        .divider {
+            display: block;
+            margin: 20px 0;
+            color: #aaa;
+            font-weight: 600;
+            font-size: 0.8rem;
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #eee;
+        }
+
+        .divider::before { left: 0; }
+        .divider::after { right: 0; }
+
+        .phone-box {
+            background: var(--light-bg);
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .phone-box p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: var(--light-text);
+        }
+
+        .phone-number {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .phone-number i {
+            color: var(--primary-color);
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .payment-icons img {
+            height: 25px;
+            width: auto;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .payment-icons img:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.jpg" alt="Logo" class="navbar-logo"> White Volunteer's Foundation
+            </a>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="donate.html" class="active btn btn-primary">Donate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Your Support Makes Miracles Happen</h1>
+            <p>Every contribution, no matter how small, helps us bring hope to those in need.</p>
+        </div>
+    </header>
+
+    <!-- Donation Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">Make a Donation</h2>
+                    <p>Your donation helps us provide education, healthcare, and essential resources to underprivileged
+                        communities. Choose an amount to donate:</p>
+
+                    <div class="donation-options">
+                        <button class="donation-btn">₹100</button>
+                        <button class="donation-btn">₹250</button>
+                        <button class="donation-btn active">₹500</button>
+                        <button class="donation-btn">₹1000</button>
+                        <button class="donation-btn">Custom</button>
+                    </div>
+
+                    <form style="margin-top: 20px;">
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 500;">Enter Amount
+                                (₹)</label>
+                            <input type="number" value="500" class="form-control"
+                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Proceed to Donate</button>
+                    </form>
+                </div>
+                <div class="about-image">
+                    <div class="payment-card">
+                        <div class="payment-header">
+                            <h3>Scan to Donate via UPI</h3>
+                            <p>Support us directly using any UPI app</p>
+                        </div>
+                        <div class="qr-code-wrapper">
+                            <img src="assets/images/qr_code.jpg" alt="UPI QR Code" class="main-qr">
+                            <div class="qr-overlay">
+                                <i class="fas fa-qrcode"></i>
+                            </div>
+                        </div>
+                        <div class="phone-payment">
+                            <span class="divider">OR</span>
+                            <div class="phone-box">
+                                <p>Send money to phone number</p>
+                                <div class="phone-number">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>+91 91862 11983</span>
+                                </div>
+                                <div class="payment-icons">
+                                    <img src="https://img.icons8.com/color/48/000000/google-pay.png" alt="GPay">
+                                    <img src="https://img.icons8.com/color/48/000000/phonepe.png" alt="PhonePe">
+                                    <img src="https://img.icons8.com/color/48/000000/paytm.png" alt="Paytm">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center" style="font-size: 0.85rem; color: #666; margin-top: 15px;">
+                            Your contribution helps us bring hope and change lives.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>White Volunteer's Foundation</h3>
+                    <p>Making the world a better place, one step at a time. Join us in our journey to bring hope and
+                        change lives.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Our Programs</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 6-9/3, beside Bakasura restaurant, A. Rao Nagar, Hyderabad, 500062</li>
+                        <li><i class="fas fa-phone"></i> +91 91862 11983</li>
+                        <li><i class="fas fa-envelope"></i> urbandonors@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/www.wvfindia.org?mibextid=rS40aB7S9Ucbxw6v" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/p/DHYTIrJPWHr/?igsh=NXNieDFqODU4czhj" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2025 White Volunteer's Foundation NGO.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Simple script to handle donation button selection
+        const donationBtns = document.querySelectorAll('.donation-btn');
+        const amountInput = document.querySelector('input[type="number"]');
+
+        donationBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                donationBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                if (btn.innerText !== 'Custom') {
+                    amountInput.value = btn.innerText.replace('₹', '');
+                } else {
+                    amountInput.value = '';
+                    amountInput.focus();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

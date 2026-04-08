@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Volunteer's Foundation - NGO Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.jpg" alt="Logo" class="navbar-logo"> White Volunteer's Foundation
+            </a>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="donate.html" class="btn btn-primary">Donate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Slider) -->
+    <header class="hero-slider">
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="slide active"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/carousel_1.png');">
+                <div class="container hero-content">
+                    <h1>Bringing Hope. Changing Lives.</h1>
+                    <p>Join us in our mission to support education, healthcare, and community development.</p>
+                    <div class="hero-buttons">
+                        <a href="donate.html" class="btn btn-primary">Donate Now</a>
+                        <a href="volunteer.html" class="btn btn-outline">Become a Volunteer</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/carousel_3.jpg');">
+                <div class="container hero-content">
+                    <h1>Empowering Communities</h1>
+                    <p>We work together to build a sustainable future for everyone, everywhere.</p>
+                    <div class="hero-buttons">
+                        <a href="programs.html" class="btn btn-primary">Our Programs</a>
+                        <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/carousel_4.jpg');">
+                <div class="container hero-content">
+                    <h1>Education for All</h1>
+                    <p>Every child deserves the chance to learn, grow, and succeed.</p>
+                    <div class="hero-buttons">
+                        <a href="donate.html" class="btn btn-primary">Support Education</a>
+                        <a href="about.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/carousel_5.jpg');">
+                <div class="container hero-content">
+                    <h1>Sustainable Future</h1>
+                    <p>Building resilient communities through sustainable development.</p>
+                    <div class="hero-buttons">
+                        <a href="programs.html" class="btn btn-primary">Our Projects</a>
+                        <a href="volunteer.html" class="btn btn-outline">Join Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/carousel_6.png');">
+                <div class="container hero-content">
+                    <h1>Making an Impact</h1>
+                    <p>Join thousands of volunteers making a real difference today.</p>
+                    <div class="hero-buttons">
+                        <a href="donate.html" class="btn btn-primary">Donate Now</a>
+                        <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 6 -->
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/carousel_7.jpg');">
+                <div class="container hero-content">
+                    <h1>Healthy Lives</h1>
+                    <p>Ensuring access to clean water and specialized healthcare for all.</p>
+                    <div class="hero-buttons">
+                        <a href="programs.html#health" class="btn btn-primary">Health Programs</a>
+                        <a href="donate.html" class="btn btn-outline">Support Health</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 7 -->
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/carousel_8.png');">
+                <div class="container hero-content">
+                    <h1>Skill Development</h1>
+                    <p>Providing vocational training to empower individuals and families.</p>
+                    <div class="hero-buttons">
+                        <a href="programs.html#skills" class="btn btn-primary">Join Training</a>
+                        <a href="volunteer.html" class="btn btn-outline">Help Teach</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 8 -->
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/carousel_9.jpg');">
+                <div class="container hero-content">
+                    <h1>Rebuild & Restore</h1>
+                    <p>Assisting in disaster relief and infrastructure restoration projects.</p>
+                    <div class="hero-buttons">
+                        <a href="donate.html" class="btn btn-primary">Support Relief</a>
+                        <a href="volunteer.html" class="btn btn-outline">Become a Volunteer</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 9 -->
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/carousel_10.png');">
+                <div class="container hero-content">
+                    <h1>Community Harmony</h1>
+                    <p>Fostering peace and cooperation through local engagement initiatives.</p>
+                    <div class="hero-buttons">
+                        <a href="about.html" class="btn btn-primary">Our Vision</a>
+                        <a href="contact.html" class="btn btn-outline">Get Involved</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 10 -->
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/carousel_11.jpg');">
+                <div class="container hero-content">
+                    <h1>Youth Leadership</h1>
+                    <p>Mentoring the next generation of global leaders and change-makers.</p>
+                    <div class="hero-buttons">
+                        <a href="programs.html" class="btn btn-primary">Learn Programs</a>
+                        <a href="volunteer.html" class="btn btn-outline">Join as Mentor</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 11 -->
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/carousel_12.jpg');">
+                <div class="container hero-content">
+                    <h1>Environmental Care</h1>
+                    <p>Protecting our planet through green energy and conservation projects.</p>
+                    <div class="hero-buttons">
+                        <a href="programs.html" class="btn btn-primary">Our Projects</a>
+                        <a href="donate.html" class="btn btn-outline">Support Earth</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 12 -->
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/carousel_13.jpg');">
+                <div class="container hero-content">
+                    <h1>Global Partnership</h1>
+                    <p>Working with partners around the world to maximize our collective impact.</p>
+                    <div class="hero-buttons">
+                        <a href="about.html" class="btn btn-primary">Our Partners</a>
+                        <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+            <span class="dot" data-slide="5"></span>
+            <span class="dot" data-slide="6"></span>
+            <span class="dot" data-slide="7"></span>
+            <span class="dot" data-slide="8"></span>
+            <span class="dot" data-slide="9"></span>
+            <span class="dot" data-slide="10"></span>
+            <span class="dot" data-slide="11"></span>
+        </div>
+    </header>
+
+    <!-- Impact Statistics -->
+    <section class="impact-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="counter" data-target="12500">0</h3>
+                    <p>Children Educated</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="45000">0</h3>
+                    <p>Meals Served</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="320">0</h3>
+                    <p>Volunteers</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="52">0</h3>
+                    <p>Communities Impacted</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Preview -->
+    <section class="section-padding programs-preview">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Our Causes</span>
+                <h2 class="section-title">Recent Programs</h2>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Education">
+                    </div>
+                    <div class="program-content">
+                        <h3>Education for Every Child</h3>
+                        <p>Providing quality education and learning resources to underprivileged children in remote
+                            areas.</p>
+                        <a href="programs.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Healthcare">
+                    </div>
+                    <div class="program-content">
+                        <h3>Medical Support</h3>
+                        <p>Organizing free medical camps and providing essential medicines to those in need.</p>
+                        <a href="programs.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Community">
+                    </div>
+                    <div class="program-content">
+                        <h3>Community Development</h3>
+                        <p>Empowering communities through sustainable development projects and infrastructure.</p>
+                        <a href="programs.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="programs.html" class="btn btn-primary">View All Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Short About -->
+    <section class="section-padding short-about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="About Us">
+                </div>
+                <div class="about-content">
+                    <span class="section-subtitle">Who We Are</span>
+                    <h2 class="section-title">We Are Non-Profit Team</h2>
+                    <p>White Volunteer's Foundation is dedicated to making a lasting impact in the lives of the most vulnerable. We
+                        believe that every individual deserves access to basic necessities, education, and a chance for
+                        a better future.</p>
+                    <p>Since our inception, we have been working tirelessly to bridge the gap between resources and
+                        needs, fostering a community of care and support.</p>
+                    <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>White Volunteer's Foundation</h3>
+                    <p>Making the world a better place, one step at a time. Join us in our journey to bring hope and
+                        change lives.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Our Programs</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 6-9/3, beside Bakasura restaurant, A. Rao Nagar, Hyderabad, 500062</li>
+                        <li><i class="fas fa-phone"></i> +91 91862 11983</li>
+                        <li><i class="fas fa-envelope"></i> urbandonors@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/www.wvfindia.org?mibextid=rS40aB7S9Ucbxw6v" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/p/DHYTIrJPWHr/?igsh=NXNieDFqODU4czhj" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2025 White Volunteer's Foundation NGO.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
